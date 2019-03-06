@@ -14,6 +14,7 @@ func TestCamelSnake(t *testing.T) {
 	}{
 		{in: "Add updated_at to users table", camel: "AddUpdatedAtToUsersTable", snake: "add_updated_at_to_users_table"},
 		{in: "$()&^%(_--crazy__--input$)", camel: "CrazyInput", snake: "crazy_input"},
+		{in: "Hey, this TEXT will have to obey some rules!!", camel: "HeyThisTextWillHaveToObeySomeRules", snake: "hey_this_text_will_have_to_obey_some_rules"},
 	}
 
 	for _, test := range tt {
