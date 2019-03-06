@@ -1,5 +1,7 @@
 # camelcase
 
+[![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis]
+
 Golang pkg to convert any input text to CamelCase or snake_case via a fast state machine parser.
 
 ## Usage:
@@ -16,4 +18,9 @@ camelsnake.SnakeCase("Hey, this TEXT will have to obey some rules!!") // hey_thi
 ```
 
 # License
-[MIT license](./LICENSE)
+Licensed under [MIT License](./LICENSE)
+
+[GoDoc]: https://godoc.org/github.com/VojtechVitek/camelsnake
+[GoDoc Widget]: https://godoc.org/github.com/VojtechVitek/camelsnake?status.svg
+[Travis]: https://travis-ci.org/VojtechVitek/camelsnake
+[Travis Widget]: https://travis-ci.org/VojtechVitek/camelsnake.svg?branch=master
