@@ -7,19 +7,13 @@ Golang pkg to convert any text input to camelCase, PascalCase or snake_case nami
 ## Usage
 ```go
 import "github.com/golang-cz/textcase"
-```
 
-```go
 textcase.CamelCase("Hello World!")
 // helloWorld
-```
 
-```go
 textcase.PascalCase("Hello World!")
 // HelloWorld
-```
 
-```go
 textcase.SnakeCase("Hello World!")
 // hello_world
 ```
@@ -29,6 +23,14 @@ textcase.SnakeCase("Hello World!")
 textcase.CamelCase("Háčky, čárky. Příliš žluťoučký kůň úpěl ďábelské ódy.")
 // háčkyČárkyPřílišŽluťoučkýKůňÚpělĎábelskéÓdy
 ```
+
+### Possible Unicode limitations
+```go
+textcase.CamelCase("Here comes O'Brian")
+// hereComesOBrian
+```
+
+This package doesn't implement language-specific case mappers, such as [golang.org/x/text/cases](https://pkg.go.dev/golang.org/x/text/cases), and thus comes with a similar limitation to [strings.Title()](https://pkg.go.dev/strings#Title). But given the likely use cases of this package, we deliberately chose English version `hereComesOBrian` over `hereComesObrian` for the above `Here comes O'Brian` input.
 
 # License
 Licensed under [MIT License](./LICENSE)
