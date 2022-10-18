@@ -1,8 +1,8 @@
 # textcase
 
-[![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis]
+[![GoDoc Widget]][GoDoc]
 
-Convert any text input to ASCII CamelCase or snake_case via a fast state machine parser.
+Golang pkg to convert any text input to ASCII CamelCase or snake_case via a fast state machine parser.
 
 ## Usage:
 ```go
@@ -24,5 +24,3 @@ Licensed under [MIT License](./LICENSE)
 
 [GoDoc]: https://godoc.org/github.com/golang-cz/textcase
 [GoDoc Widget]: https://godoc.org/github.com/golang-cz/textcase?status.svg
-[Travis]: https://travis-ci.org/golang-cz/textcase
-[Travis Widget]: https://travis-ci.org/golang-cz/textcase.svg?branch=master
