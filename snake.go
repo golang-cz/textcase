@@ -11,20 +11,21 @@ import (
 func SnakeCase(str string) string {
 	var b bytes.Buffer
 
-	stateMachine := idle
+	state := idle
 	for i := 0; i < len(str); {
 		r, size := utf8.DecodeRuneInString(str[i:])
 		i += size
-		stateMachine = stateMachine.next(r)
-		switch stateMachine {
+		state = state.next(r)
+		switch state {
 		case firstAlphaNum, alphaNum:
 			b.WriteRune(unicode.ToLower(r))
 		case delimiter:
 			b.WriteByte('_')
 		}
 	}
-	if stateMachine == idle {
-		return string(bytes.TrimSuffix(b.Bytes(), []byte{'_'}))
+	if (state == idle || state == delimiter) && b.Len() > 0 {
+		b.Truncate(b.Len() - 1)
 	}
+
 	return b.String()
 }

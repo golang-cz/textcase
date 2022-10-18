@@ -11,12 +11,12 @@ import (
 func CamelCase(input string) string {
 	var b strings.Builder
 
-	stateMachine := idle
+	state := idle
 	for i := 0; i < len(input); {
 		r, size := utf8.DecodeRuneInString(input[i:])
 		i += size
-		stateMachine = stateMachine.next(r)
-		switch stateMachine {
+		state = state.next(r)
+		switch state {
 		case firstAlphaNum:
 			if b.Len() > 0 {
 				b.WriteRune(unicode.ToUpper(r))

@@ -4,16 +4,17 @@ import (
 	"unicode"
 )
 
-type stateMachine int
+type parserStateMachine int
 
 const (
-	idle          stateMachine = iota // 0 _$$_This is some text, OK?!
-	firstAlphaNum                     // 1     ↑    ↑  ↑    ↑     ↑
-	alphaNum                          // 2      ↑↑↑  ↑  ↑↑↑  ↑↑↑   ↑
-	delimiter                         // 3         ↑  ↑    ↑    ↑   ↑
+	_             parserStateMachine = iota //   _$$_This is some text, OK?!
+	idle                                    // 1 ↑↑↑↑                  ↑   ↑
+	firstAlphaNum                           // 2     ↑    ↑  ↑    ↑     ↑
+	alphaNum                                // 3      ↑↑↑  ↑  ↑↑↑  ↑↑↑   ↑
+	delimiter                               // 4         ↑  ↑    ↑    ↑   ↑
 )
 
-func (s stateMachine) next(r rune) stateMachine {
+func (s parserStateMachine) next(r rune) parserStateMachine {
 	switch s {
 	case idle:
 		if isAlphaNum(r) {
