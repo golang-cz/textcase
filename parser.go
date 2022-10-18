@@ -1,4 +1,4 @@
-package camelsnake
+package textcase
 
 import (
 	"unicode"

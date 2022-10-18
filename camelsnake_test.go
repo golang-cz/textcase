@@ -1,10 +1,10 @@
-package camelsnake
+package textcase
 
 import (
 	"testing"
 )
 
-func TestCamelSnake(t *testing.T) {
+func TestTextCase(t *testing.T) {
 	t.Parallel()
 
 	tt := []struct {
