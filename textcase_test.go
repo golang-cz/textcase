@@ -25,6 +25,7 @@ func TestTextCases(t *testing.T) {
 		{in: "a___b", camel: "aB", snake: "a_b"},
 		{in: "ax___by", camel: "axBy", snake: "ax_by"},
 		{in: "Háčky, čárky. Příliš žluťoučký kůň úpěl ďábelské ódy.", camel: "háčkyČárkyPřílišŽluťoučkýKůňÚpělĎábelskéÓdy", snake: "háčky_čárky_příliš_žluťoučký_kůň_úpěl_ďábelské_ódy"},
+		{in: "here comes O'Brian", camel: "hereComesOBrian", snake: "here_comes_o_brian"},
 	}
 
 	for _, test := range tt {
