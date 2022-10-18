@@ -6,9 +6,9 @@ import (
 	"unicode/utf8"
 )
 
-// Converts input string to "camelCase" (lower camel case) naming convention.
+// Converts input string to "PascalCase" (upper camel case) naming convention.
 // Removes all whitespace and special characters. Supports Unicode characters.
-func CamelCase(input string) string {
+func PascalCase(input string) string {
 	var b strings.Builder
 
 	stateMachine := idle
@@ -18,11 +18,7 @@ func CamelCase(input string) string {
 		stateMachine = stateMachine.next(r)
 		switch stateMachine {
 		case firstAlphaNum:
-			if b.Len() > 0 {
-				b.WriteRune(unicode.ToUpper(r))
-			} else {
-				b.WriteRune(unicode.ToLower(r))
-			}
+			b.WriteRune(unicode.ToUpper(r))
 		case alphaNum:
 			b.WriteRune(unicode.ToLower(r))
 		}

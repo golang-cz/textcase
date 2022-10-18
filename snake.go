@@ -6,6 +6,8 @@ import (
 	"unicode/utf8"
 )
 
+// Converts input string to "snake_case" naming convention.
+// Removes all whitespace and special characters. Supports Unicode characters.
 func SnakeCase(str string) string {
 	var b bytes.Buffer
 

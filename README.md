@@ -2,20 +2,25 @@
 
 [![GoDoc Widget]][GoDoc]
 
-Golang pkg to convert any text input to ASCII CamelCase or snake_case via a fast state machine parser.
+Golang pkg to convert any text input to camelCase, PascalCase or snake_case via a fast state machine parser. Removes all whitespaces and special characters. Supports Unicode characters.
 
-## Usage:
+## Usage
 ```go
 import "github.com/golang-cz/textcase"
 ```
 
 ```go
-textcase.CamelCase("Hello World!!")
+textcase.CamelCase("Hello World!")
+// helloWorld
+```
+
+```go
+textcase.CamelCase("Hello World!")
 // HelloWorld
 ```
 
 ```go
-textcase.SnakeCase("Hello World!!")
+textcase.SnakeCase("Hello World!")
 // hello_world
 ```
 
