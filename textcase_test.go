@@ -29,14 +29,26 @@ func TestTextCases(t *testing.T) {
 	}
 
 	for _, test := range tt {
+		// camelCase
 		if got := CamelCase(test.in); got != test.camel {
 			t.Errorf("unexpected camelCase for input(%q), got %q, want %q", test.in, got, test.camel)
 		}
-		if got := PascalCase(test.in); got != strings.Title(test.camel) {
-			t.Errorf("unexpected PascalCase for input(%q), got %q, want %q", test.in, got, strings.Title(test.camel))
+
+		// PascalCase
+		testPascal := strings.Title(test.camel)
+		if got := PascalCase(test.in); got != testPascal {
+			t.Errorf("unexpected PascalCase for input(%q), got %q, want %q", test.in, got, testPascal)
 		}
+
+		// snake_case
 		if got := SnakeCase(test.in); got != test.snake {
 			t.Errorf("unexpected snake_case for input(%q), got %q, want %q", test.in, got, test.snake)
+		}
+
+		// kebab-case
+		testKebab := strings.ReplaceAll(test.snake, "_", "-")
+		if got := KebabCase(test.in); got != testKebab {
+			t.Errorf("unexpected kebab-case for input(%q), got %q, want %q", test.in, got, testKebab)
 		}
 	}
 }

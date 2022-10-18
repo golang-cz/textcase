@@ -2,7 +2,7 @@
 
 [![GoDoc Widget]][GoDoc]
 
-Golang pkg to convert any text input to camelCase, PascalCase or snake_case naming convention. Removes all whitespaces and special characters. Supports Unicode characters.
+Golang pkg to convert any text input to **camelCase**, **PascalCase**, **snake_case** or **kebab-case** naming convention. Removes all whitespaces and special characters. Supports Unicode characters.
 
 ## Usage
 ```go
@@ -16,6 +16,9 @@ textcase.PascalCase("Hello World!")
 
 textcase.SnakeCase("Hello World!")
 // hello_world
+
+textcase.KebabCase("Hello World!")
+// hello-world
 ```
 
 ## Unicode support
