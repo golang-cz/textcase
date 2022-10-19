@@ -9,11 +9,13 @@ import (
 // Converts input string to "camelCase" (lower camel case) naming convention.
 // Removes all whitespace and special characters. Supports Unicode characters.
 func CamelCase(input string) string {
+	str := markLetterCaseChanges(input)
+
 	var b strings.Builder
 
 	state := idle
-	for i := 0; i < len(input); {
-		r, size := utf8.DecodeRuneInString(input[i:])
+	for i := 0; i < len(str); {
+		r, size := utf8.DecodeRuneInString(str[i:])
 		i += size
 		state = state.next(r)
 		switch state {
@@ -27,5 +29,6 @@ func CamelCase(input string) string {
 			b.WriteRune(unicode.ToLower(r))
 		}
 	}
+
 	return b.String()
 }

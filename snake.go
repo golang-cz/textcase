@@ -8,7 +8,9 @@ import (
 
 // Converts input string to "snake_case" naming convention.
 // Removes all whitespace and special characters. Supports Unicode characters.
-func SnakeCase(str string) string {
+func SnakeCase(input string) string {
+	str := markLetterCaseChanges(input)
+
 	var b bytes.Buffer
 
 	state := idle
