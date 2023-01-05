@@ -21,6 +21,7 @@ func TestTextCases(t *testing.T) {
 		{in: "ax___by", camel: "axBy", snake: "ax_by"},
 		{in: "someText", camel: "someText", snake: "some_text"},
 		{in: "someTEXT", camel: "someText", snake: "some_text"},
+		{in: "*postgresql.JSONBConverter", camel: "postgresqlJsonbConverter", snake: "postgresql_jsonb_converter"},
 		{in: "NeXT", camel: "neXt", snake: "ne_xt"},
 		{in: "Add updated_at to users table", camel: "addUpdatedAtToUsersTable", snake: "add_updated_at_to_users_table"},
 		{in: "Hey, this TEXT will have to obey some rules!!", camel: "heyThisTextWillHaveToObeySomeRules", snake: "hey_this_text_will_have_to_obey_some_rules"},
